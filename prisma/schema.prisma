@@ -1,0 +1,165 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Profile {
+  id           String     @id @default(uuid())
+  clerkId      String     @unique
+  firstName    String
+  lastName     String
+  userName     String
+  email        String
+  profileImage String
+  role         String     @default("USER")
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  Property     Property[]
+}
+
+model Property {
+  id          String   @id @default(uuid())
+  name        String
+  tagline     String
+  category    String
+  image       String
+  country     String
+  description String
+  price       Int
+  guests      Int
+  bedrooms    Int
+  beds        Int
+  baths       Int
+  amenities   String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  profile     Profile  @relation(fields: [profileId], references: [clerkId], onDelete: Cascade)
+  profileId   String
+}
+
+model Product {
+  id          String   @id @default(uuid())
+  name        String
+  company     String
+  description String
+  featured    Boolean
+  image       String
+  price       Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  clerkId     String
+}
+
+model Blog {
+  id          String  @id @default(uuid())
+  slug        String  @unique
+  title       String
+  content     String
+  summary     String?
+  image       String?
+  category    String  @default("Gezi Rehberi")
+  tags        String?
+  isPublished Boolean @default(false)
+  isFeatured  Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
+
+/////////////////////////////////////////////////
+// Fair & Related Models
+/////////////////////////////////////////////////
+
+model Fair {
+  id                      String      @id @default(uuid())
+  slug                    String      @unique
+  name                    String
+  description             String
+  summary                 String?
+  website                 String?
+  venue                   String?
+  type                    String?
+  category                String?
+  logoImage               String?
+  coverImage              String?
+  displayedProducts       String?
+  tourGuide               String?
+  onBanner                Boolean     @default(false)
+  isPublished             Boolean     @default(false)
+  isFeatured              Boolean     @default(false)
+  isSectoralFairIndex     Boolean     @default(false)
+  isDefiniteDepartureTour Boolean     @default(false)
+  date                    String?
+  startDate               DateTime    @default(now())
+  endDate                 DateTime?   @default(now())
+  hotelId                 String? // Foreign key
+  hotel                   Hotel?      @relation(fields: [hotelId], references: [id])
+  fairImagesId            String?
+  fairImage               FairImages? @relation(fields: [fairImagesId], references: [id])
+  tourImagesId            String?
+  tourImage               TourImages? @relation(fields: [tourImagesId], references: [id])
+  paidServices            String?
+  freeServices            String?
+  createdAt               DateTime    @default(now())
+  updatedAt               DateTime    @default(now())
+
+  tourPrograms Json?
+}
+
+model Hotel {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  images      String[] // Array of image URLs
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  fairs       Fair[] // Relation field - one hotel can be associated with many fairs
+}
+
+model FairImages {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  images      String[] // Array of image URLs
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  fairs       Fair[] // Relation field - one hotel can be associated with many fairs
+}
+
+model TourImages {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  images      String[] // Array of image URLs
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  fairs       Fair[] // Relation field - one hotel can be associated with many fairs
+}
+
+model Message {
+  id             String   @id @default(uuid())
+  name           String
+  email          String
+  subject        String?
+  contactMessage String?
+  from           String?
+  isRead         Boolean  @default(false)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @default(now())
+}
+
+model SeoPage {
+  id          String   @id @default(cuid())
+  url         String?  @unique
+  title       String?
+  description String?
+  keywords    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
