@@ -30,6 +30,7 @@ export default function Footer() {
     <footer className="bg-gray-800 dark:bg-gray-950 text-gray-100 py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          {/* Logo and socials */}
           <div>
             <Link
               href="/"
@@ -73,12 +74,14 @@ export default function Footer() {
               </a>
             </div>
           </div>
+
+          {/* Hızlı Bağlantılar */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Hızlı Bağlantılar</h3>
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="#"
+                  href="/"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Anasayfa
@@ -86,23 +89,15 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/fuarlar"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Destinasyonlar
+                  Fuarlar
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Turlar
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
+                  href="/hakkimizda"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Hakkımızda
@@ -110,7 +105,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/iletisim"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   İletişim
@@ -121,28 +116,28 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">İletişim Bilgileri</h3>
             <ul className="space-y-2">
-              <li className="flex items-center">
+              {/* <li className="flex items-center">
                 <MapPin size={16} className="mr-2" />
                 <span className="text-gray-400">
                   İstiklal Cad. No:123, İstanbul, Türkiye
                 </span>
-              </li>
+              </li> */}
               <li className="flex items-center">
                 <Phone size={16} className="mr-2" />
                 <a
-                  href="tel:+902121234567"
+                  href="tel:+905459701919"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  +90 (212) 123 45 67
+                  +90 545 970 19 19
                 </a>
               </li>
               <li className="flex items-center">
                 <Mail size={16} className="mr-2" />
                 <a
-                  href="mailto:info@turkseyahat.com"
+                  href="mailto:info@fuarlarim.com"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  info@fuarlarım.com
+                  info@fuarlarim.com
                 </a>
               </li>
             </ul>

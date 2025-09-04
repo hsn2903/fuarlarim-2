@@ -57,7 +57,7 @@ FairsFilterProps) {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 px-6 w-1/4">
+    <div className="bg-white dark:bg-gray-800 px-6 w-full md:w-1/4">
       <div className="flex flex-col gap-4">
         <div>
           <label

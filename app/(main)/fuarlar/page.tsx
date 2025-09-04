@@ -40,7 +40,7 @@ const FuarlarPage = async ({
         </div>
       </header>
 
-      <div className="container mx-auto px-4 py-8 flex gap-4">
+      <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row gap-4">
         <FairsFilter initialFilters={parsedParams} />
 
         <Suspense fallback={<LoadingTable />}>

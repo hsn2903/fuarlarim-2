@@ -18,7 +18,7 @@ export default function FairsList({
   limit,
 }: FairsListProps) {
   return (
-    <div className="w-3/4">
+    <div className="w-full md:w-3/4">
       {fairs.length === 0 ? (
         <div className="text-center py-12 bg-gray-50 dark:bg-gray-900 rounded-lg">
           <p className="text-xl text-gray-600 dark:text-gray-400">

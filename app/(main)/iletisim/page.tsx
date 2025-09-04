@@ -20,7 +20,7 @@ export default function Contact() {
             <h2 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-100">
               İletişim Bilgileri
             </h2>
-            <div className="space-y-4 grid grid-cols-2">
+            <div className="space-y-4 grid grid-cols-1 md:grid-cols-2">
               <div className="flex items-center">
                 <Phone className="h-5 w-5 mr-3 text-gray-500 dark:text-gray-400" />
                 <span className="text-gray-600 dark:text-gray-300">

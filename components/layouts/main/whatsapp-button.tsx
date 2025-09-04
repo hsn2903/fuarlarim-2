@@ -10,7 +10,7 @@ const WhatsAppButton = () => {
 
   return (
     <button
-      className="cursor-pointer fixed bottom-4 left-4 rounded-full  bg-[#25D366] shadow-lg p-4"
+      className="cursor-pointer fixed bottom-4 left-4 rounded-full  bg-[#25D366] shadow-lg p-4 z-50"
       onClick={handleWhatsAppClick}
     >
       <FaWhatsapp className="text-white" size={40} />

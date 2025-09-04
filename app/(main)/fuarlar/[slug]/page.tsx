@@ -100,13 +100,13 @@ const FuarDetayPage = async ({
         <ImageGalleryButton />
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-8 px-20">
+      <div className="flex flex-col lg:flex-row gap-8 px-4 lg:px-20">
         <div className="lg:w-2/3 flex flex-col gap-12 mb-20">
           <div className="flex flex-col gap-4 py-12">
             <h2 className="text-4xl font-bold text-primary/80">{fair.name}</h2>
             <p>{fair.description}</p>
 
-            <div className="grid grid-cols-2 h-full gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 h-full gap-4">
               <div className="flex items-center group gap-2">
                 <FaLayerGroup className="text-gray-500 text-xl group-hover:text-gray-700 transition-colors" />
 

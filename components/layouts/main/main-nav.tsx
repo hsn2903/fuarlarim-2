@@ -101,14 +101,16 @@ const MainNav = () => {
                     ? "text-gray-800 dark:text-white font-medium"
                     : "text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white"
                 }`}
+                onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
           </div>
           <div className="px-2 pt-2 pb-3">
-            <NavSearch />
-            <Button variant="outline" className="w-full mb-2">
+            {/* <NavSearch /> */}
+
+            <Button variant="outline" className="w-full my-2">
               Giriş Yap
             </Button>
             <Button className="w-full">Kayıt Ol</Button>
