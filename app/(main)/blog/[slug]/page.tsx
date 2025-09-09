@@ -7,6 +7,10 @@ import Link from "next/link";
 import ContactForm from "../../_components/contact-form";
 import { getBlogBySlug } from "@/app/_actions/blogs";
 
+export const metadata = {
+  title: "Blog",
+};
+
 const BlogDetailPage = async ({
   params,
 }: {

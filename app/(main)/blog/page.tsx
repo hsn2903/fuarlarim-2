@@ -1,6 +1,11 @@
 import React from "react";
 import BlogsListing from "./_components/blogs-listing";
 import { getAllBlogs } from "@/app/_actions/blogs";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog",
+};
 
 const BlogsListPage = async () => {
   const blogs = await getAllBlogs();

@@ -1,9 +1,14 @@
-"use client";
+// "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Facebook, Twitter, Linkedin } from "lucide-react";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Hakkımızda",
+};
 
 export default function About() {
   const teamMembers = [

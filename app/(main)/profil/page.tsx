@@ -7,6 +7,11 @@ import { SubmitButton } from "@/components/form/buttons";
 import FormContainer from "@/components/form/form-container";
 import FormInput from "@/components/form/form-input";
 import ImageInputContainer from "@/components/form/image-input-container";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Profil",
+};
 
 const ProfilPage = async () => {
   const profile = await fetchProfile();

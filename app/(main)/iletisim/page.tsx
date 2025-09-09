@@ -1,6 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import ContactForm from "../_components/contact-form";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "İletişim",
+};
 
 export default function Contact() {
   return (
