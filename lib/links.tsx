@@ -57,11 +57,11 @@ export const DASHBOARD_NAV_LINKS: DashboardNavLink[] = [
     label: "Blog",
     icon: <BookOpenIcon className="h-4 w-4" />,
   },
-  {
-    href: "/dashboard/issues",
-    label: "Sorun Bildir",
-    icon: <BugIcon className="h-4 w-4" />,
-  },
+  // {
+  //   href: "/dashboard/issues",
+  //   label: "Sorun Bildir",
+  //   icon: <BugIcon className="h-4 w-4" />,
+  // },
   {
     href: "/dashboard/hotels",
     label: "Oteller",

@@ -95,7 +95,7 @@ export default function BlogsSection({ blogposts }: { blogposts: Blog[] }) {
               </div>
               <CardContent className="p-4 space-y-1">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 line-clamp-2">
+                  <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 line-clamp-2 -mt-6">
                     {post.title}
                   </h3>
                   <p className="text-sm text-gray-600 dark:text-gray-300 mt-2 line-clamp-1">
