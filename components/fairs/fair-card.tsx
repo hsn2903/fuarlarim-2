@@ -70,11 +70,11 @@ export const FairCard = ({ fair }: { fair: Fair }) => {
           </div>
         </div>
         <div className="flex items-center text-sm text-gray-600 dark:text-gray-300 mb-2">
-          <GlobeIcon className="mr-2 h-4 w-4" />
+          <GlobeIcon className="mr-3 h-4 w-4" />
           <span>{fair.type} Fuarı</span>
         </div>
         <div className="flex items-center text-sm text-gray-600 dark:text-gray-300 mb-4">
-          <MapPin className="mr-2 h-4 w-4" />
+          <MapPin className="mr-3 h-4 w-4" />
           <span>{fair.venue}</span>
         </div>
         <Link href={`/fuarlar/${fair.slug}`} className="block mb-4">

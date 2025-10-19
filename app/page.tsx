@@ -28,11 +28,11 @@ const HomePage = async ({
   return (
     <section>
       <HeroSection />
-      <GuaranteedDepartureTours />
       <CampaignsSection />
+      <GuaranteedDepartureTours />
+      <AboutSection />
       <FeaturedFairs fuarKategori={(await searchParams)?.fuarKategori} />
       <BlogsSection blogposts={blogs} />
-      <AboutSection />
       <Footer />
 
       {/* <CategoriesList category={category} search={search} />

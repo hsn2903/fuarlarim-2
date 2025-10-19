@@ -40,8 +40,8 @@ export default function Footer() {
               Fuarlarım
             </Link>
             <p className="text-gray-400 mb-4">
-              Türkiye&apos;nin en iyi seyahat deneyimlerini keşfedin. Unutulmaz
-              anılar biriktirin.
+              Türkiye’nin en kapsamlı fuar platformu. Yeni fırsatları keşfedin,
+              işinizi büyütün.
             </p>
             <div className="flex space-x-4">
               <a

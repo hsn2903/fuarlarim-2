@@ -13,16 +13,20 @@ import Image from "next/image";
 
 const navLinks = [
   {
+    label: "Anasayfa",
+    href: "/",
+  },
+  {
     label: "Fuarlar",
     href: "/fuarlar",
   },
   {
-    label: "Blog",
-    href: "/blog",
-  },
-  {
     label: "Hakkımızda",
     href: "/hakkimizda",
+  },
+  {
+    label: "Blog",
+    href: "/blog",
   },
   {
     label: "İletişim",

@@ -25,11 +25,11 @@ export default async function HeroSection() {
       {/* Hero content */}
       <div className="relative z-10 flex-grow flex flex-col justify-center items-center text-center text-gray-100 px-4">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-          Fuar Takip Adresiniz
+          Doğru Fuar, Güçlü Gelişim!
         </h1>
         <p className="text-lg md:text-xl lg:text-2xl mb-8 max-w-2xl">
-          Fuarlarım ile nefes kesen fuarları keşfedin ve sektörden habersiz
-          kalmayın
+          Sektörüne en uygun fuarları keşfet, büyümeni hızlandır. Fuarlarım ile
+          işini dünyaya taşı.
         </p>
 
         <FilterForm />

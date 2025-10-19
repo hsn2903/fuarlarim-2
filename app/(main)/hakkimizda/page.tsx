@@ -47,35 +47,36 @@ export default function About() {
 
       <main className="container mx-auto px-12 py-12">
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100">
+          {/* <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100">
             Biz Kimiz?
-          </h2>
+          </h2> */}
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                TurkSeyahat, 2010 yılında Türkiye&apos;nin eşsiz güzelliklerini
-                dünyaya tanıtmak ve yerli turistlere ülkemizin zenginliklerini
-                keşfetme fırsatı sunmak amacıyla kuruldu. On yılı aşkın süredir,
-                müşterilerimize unutulmaz seyahat deneyimleri yaşatmak için
-                çalışıyoruz.
+                Fuarlarım, Türkiye’nin dört bir yanındaki sektör fuarlarını tek
+                çatı altında toplayan akıllı bir arama platformudur.
               </p>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                Misyonumuz, Türkiye&apos;nin tarihi, kültürel ve doğal
-                güzelliklerini en iyi şekilde tanıtmak, ziyaretçilerimize
-                kişiselleştirilmiş ve kaliteli hizmet sunmak, ve sürdürülebilir
-                turizm prensiplerine bağlı kalarak ülkemizin turizm
-                potansiyelini artırmaktır.
+                İş dünyasının nabzını tutan firmalar, yeni iş bağlantıları
+                kurmak isteyen girişimciler ve en güncel fuar fırsatlarını
+                arayan profesyoneller için tasarlandı.
               </p>
               <p className="text-gray-600 dark:text-gray-300">
-                Vizyonumuz, Türkiye&apos;nin önde gelen seyahat ve turizm
-                şirketi olmak, müşteri memnuniyetinde sektör lideri konumuna
-                ulaşmak ve global pazarda Türkiye&apos;yi bir numaralı seyahat
-                destinasyonu olarak konumlandırmaktır.
+                Amacımız; fuar bilgilerine kolay, güvenilir ve hızlı erişim
+                sağlamaktır. Kullanıcılarımız, katılmak istedikleri fuarları
+                detaylarıyla inceleyebilir, karşılaştırabilir ve kendilerine en
+                uygun çözümleri bulabilirler.
+              </p>
+              <p className="text-gray-600 dark:text-gray-300">
+                Fuarlarım, yalnızca bir listeleme sitesi değil — iş dünyasının
+                buluşma noktasıdır. Görünmeyen tarafta sürekli güncellenen
+                sistemimizle, ziyaretçilere en taze veriyi ulaştırırız. Basit,
+                şeffaf ve etkili. Hepsi bu.
               </p>
             </div>
             <div className="relative aspect-video">
               <Image
-                src="/images/hero.jpg"
+                src="/images/hakkimizda-ucak.png"
                 alt="TurkSeyahat Ofisi"
                 layout="fill"
                 objectFit="cover"
@@ -126,7 +127,7 @@ export default function About() {
           </div>
         </section>
 
-        <section>
+        {/* <section>
           <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100">
             Ekibimiz
           </h2>
@@ -173,7 +174,7 @@ export default function About() {
               </Card>
             ))}
           </div>
-        </section>
+        </section> */}
       </main>
     </div>
   );

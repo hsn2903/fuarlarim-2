@@ -19,8 +19,8 @@ export default function Contact() {
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-4 py-12">
-        <Card className="mb-8">
+      <main className="max-w-5xl mx-auto px-4 py-12">
+        {/* <Card className="mb-8">
           <CardContent className="p-6 py-4">
             <h2 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-100">
               İletişim Bilgileri
@@ -38,12 +38,12 @@ export default function Contact() {
                   info@fuarlarim.com
                 </span>
               </div>
-              {/* <div className="flex items-center">
+              <div className="flex items-center">
                 <MapPin className="h-5 w-5 mr-3 text-gray-500 dark:text-gray-400" />
                 <span className="text-gray-600 dark:text-gray-300">
                   İstiklal Caddesi No: 123, Beyoğlu, İstanbul
                 </span>
-              </div> */}
+              </div>
               <div className="flex items-center">
                 <Clock className="h-5 w-5 mr-3 text-gray-500 dark:text-gray-400" />
                 <span className="text-gray-600 dark:text-gray-300">
@@ -52,10 +52,10 @@ export default function Contact() {
               </div>
             </div>
           </CardContent>
-        </Card>
+        </Card> */}
 
         <div className="flex flex-col lg:flex-row gap-6">
-          <div className="lg:w-1/2">
+          <div className="w-full">
             <ContactForm from="İletişim Sayfası" />
           </div>
           {/* <div className="lg:w-1/2">

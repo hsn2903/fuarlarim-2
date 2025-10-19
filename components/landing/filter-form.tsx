@@ -47,7 +47,7 @@ export default function FilterForm() {
       <CardContent className="p-6">
         <form
           onSubmit={handleSearch}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 rounded-[4px] bg-[#ffffff70]"
         >
           <div className="space-y-2">
             {/* <label htmlFor="fairName" className="text-sm font-medium">
@@ -105,7 +105,7 @@ export default function FilterForm() {
             </Select>
           </div>
 
-          <Button type="submit" className="w-full rounded-sm lg:col-span-3">
+          <Button type="submit" className="w-full rounded-sm">
             <Search className="mr-2 h-4 w-4" /> Fuar Ara
           </Button>
         </form>
