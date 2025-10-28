@@ -170,3 +170,9 @@ export const hotelSchema = z.object({
     .min(5, { message: "Açıklama en az 5 karakter içermelidir" }),
   images: z.array(z.string().url()).optional().default([]),
 });
+
+export const campanySchema = z.object({
+  name: z.string().min(4),
+  description: z.string(),
+  isPublished: z.coerce.boolean(),
+});

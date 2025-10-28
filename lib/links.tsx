@@ -9,6 +9,7 @@ import {
   PlaneIcon,
   GlobeIcon,
 } from "lucide-react";
+import { MdCampaign } from "react-icons/md";
 
 type NavLink = {
   href: string;
@@ -47,11 +48,11 @@ export const DASHBOARD_NAV_LINKS: DashboardNavLink[] = [
     label: "Fuarlar",
     icon: <PlaneIcon className="h-4 w-4" />,
   },
-  // {
-  //   href: "/dashboard/tours",
-  //   label: "Turlar",
-  //   icon: <Compass className="h-4 w-4" />,
-  // },
+  {
+    href: "/dashboard/kampanyalar",
+    label: "Kampanyalar",
+    icon: <MdCampaign className="h-4 w-4" />,
+  },
   {
     href: "/dashboard/blogs",
     label: "Blog",

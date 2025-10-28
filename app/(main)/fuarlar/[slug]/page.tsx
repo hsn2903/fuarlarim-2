@@ -91,12 +91,6 @@ const FuarDetayPage = async ({
           // objectFit="cover"
         />
 
-        {/* <Button
-          className="absolute bottom-10 right-10 cursor-pointer"
-          size="lg"
-        >
-          <Images /> Görseller
-        </Button> */}
         <ImageGalleryButton />
       </div>
 

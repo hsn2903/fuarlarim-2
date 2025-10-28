@@ -63,6 +63,11 @@ export type Message = $Result.DefaultSelection<Prisma.$MessagePayload>
  * 
  */
 export type SeoPage = $Result.DefaultSelection<Prisma.$SeoPagePayload>
+/**
+ * Model Campany
+ * 
+ */
+export type Campany = $Result.DefaultSelection<Prisma.$CampanyPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -288,6 +293,16 @@ export class PrismaClient<
     * ```
     */
   get seoPage(): Prisma.SeoPageDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.campany`: Exposes CRUD operations for the **Campany** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Campanies
+    * const campanies = await prisma.campany.findMany()
+    * ```
+    */
+  get campany(): Prisma.CampanyDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -737,7 +752,8 @@ export namespace Prisma {
     FairImages: 'FairImages',
     TourImages: 'TourImages',
     Message: 'Message',
-    SeoPage: 'SeoPage'
+    SeoPage: 'SeoPage',
+    Campany: 'Campany'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -756,7 +772,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "profile" | "property" | "product" | "blog" | "fair" | "hotel" | "fairImages" | "tourImages" | "message" | "seoPage"
+      modelProps: "profile" | "property" | "product" | "blog" | "fair" | "hotel" | "fairImages" | "tourImages" | "message" | "seoPage" | "campany"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1500,6 +1516,80 @@ export namespace Prisma {
           }
         }
       }
+      Campany: {
+        payload: Prisma.$CampanyPayload<ExtArgs>
+        fields: Prisma.CampanyFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.CampanyFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampanyPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.CampanyFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampanyPayload>
+          }
+          findFirst: {
+            args: Prisma.CampanyFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampanyPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.CampanyFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampanyPayload>
+          }
+          findMany: {
+            args: Prisma.CampanyFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampanyPayload>[]
+          }
+          create: {
+            args: Prisma.CampanyCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampanyPayload>
+          }
+          createMany: {
+            args: Prisma.CampanyCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.CampanyCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampanyPayload>[]
+          }
+          delete: {
+            args: Prisma.CampanyDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampanyPayload>
+          }
+          update: {
+            args: Prisma.CampanyUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampanyPayload>
+          }
+          deleteMany: {
+            args: Prisma.CampanyDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.CampanyUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.CampanyUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampanyPayload>[]
+          }
+          upsert: {
+            args: Prisma.CampanyUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CampanyPayload>
+          }
+          aggregate: {
+            args: Prisma.CampanyAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateCampany>
+          }
+          groupBy: {
+            args: Prisma.CampanyGroupByArgs<ExtArgs>
+            result: $Utils.Optional<CampanyGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.CampanyCountArgs<ExtArgs>
+            result: $Utils.Optional<CampanyCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1594,6 +1684,7 @@ export namespace Prisma {
     tourImages?: TourImagesOmit
     message?: MessageOmit
     seoPage?: SeoPageOmit
+    campany?: CampanyOmit
   }
 
   /* Types for Logging */
@@ -13122,6 +13213,1027 @@ export namespace Prisma {
 
 
   /**
+   * Model Campany
+   */
+
+  export type AggregateCampany = {
+    _count: CampanyCountAggregateOutputType | null
+    _min: CampanyMinAggregateOutputType | null
+    _max: CampanyMaxAggregateOutputType | null
+  }
+
+  export type CampanyMinAggregateOutputType = {
+    id: string | null
+    name: string | null
+    description: string | null
+    isPublished: boolean | null
+    image: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type CampanyMaxAggregateOutputType = {
+    id: string | null
+    name: string | null
+    description: string | null
+    isPublished: boolean | null
+    image: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type CampanyCountAggregateOutputType = {
+    id: number
+    name: number
+    description: number
+    isPublished: number
+    image: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type CampanyMinAggregateInputType = {
+    id?: true
+    name?: true
+    description?: true
+    isPublished?: true
+    image?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type CampanyMaxAggregateInputType = {
+    id?: true
+    name?: true
+    description?: true
+    isPublished?: true
+    image?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type CampanyCountAggregateInputType = {
+    id?: true
+    name?: true
+    description?: true
+    isPublished?: true
+    image?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type CampanyAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Campany to aggregate.
+     */
+    where?: CampanyWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Campanies to fetch.
+     */
+    orderBy?: CampanyOrderByWithRelationInput | CampanyOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: CampanyWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Campanies from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Campanies.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Campanies
+    **/
+    _count?: true | CampanyCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: CampanyMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: CampanyMaxAggregateInputType
+  }
+
+  export type GetCampanyAggregateType<T extends CampanyAggregateArgs> = {
+        [P in keyof T & keyof AggregateCampany]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateCampany[P]>
+      : GetScalarType<T[P], AggregateCampany[P]>
+  }
+
+
+
+
+  export type CampanyGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CampanyWhereInput
+    orderBy?: CampanyOrderByWithAggregationInput | CampanyOrderByWithAggregationInput[]
+    by: CampanyScalarFieldEnum[] | CampanyScalarFieldEnum
+    having?: CampanyScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: CampanyCountAggregateInputType | true
+    _min?: CampanyMinAggregateInputType
+    _max?: CampanyMaxAggregateInputType
+  }
+
+  export type CampanyGroupByOutputType = {
+    id: string
+    name: string
+    description: string
+    isPublished: boolean
+    image: string
+    createdAt: Date
+    updatedAt: Date
+    _count: CampanyCountAggregateOutputType | null
+    _min: CampanyMinAggregateOutputType | null
+    _max: CampanyMaxAggregateOutputType | null
+  }
+
+  type GetCampanyGroupByPayload<T extends CampanyGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<CampanyGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof CampanyGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], CampanyGroupByOutputType[P]>
+            : GetScalarType<T[P], CampanyGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type CampanySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    description?: boolean
+    isPublished?: boolean
+    image?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["campany"]>
+
+  export type CampanySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    description?: boolean
+    isPublished?: boolean
+    image?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["campany"]>
+
+  export type CampanySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    description?: boolean
+    isPublished?: boolean
+    image?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["campany"]>
+
+  export type CampanySelectScalar = {
+    id?: boolean
+    name?: boolean
+    description?: boolean
+    isPublished?: boolean
+    image?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type CampanyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "isPublished" | "image" | "createdAt" | "updatedAt", ExtArgs["result"]["campany"]>
+
+  export type $CampanyPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Campany"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      name: string
+      description: string
+      isPublished: boolean
+      image: string
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["campany"]>
+    composites: {}
+  }
+
+  type CampanyGetPayload<S extends boolean | null | undefined | CampanyDefaultArgs> = $Result.GetResult<Prisma.$CampanyPayload, S>
+
+  type CampanyCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<CampanyFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: CampanyCountAggregateInputType | true
+    }
+
+  export interface CampanyDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Campany'], meta: { name: 'Campany' } }
+    /**
+     * Find zero or one Campany that matches the filter.
+     * @param {CampanyFindUniqueArgs} args - Arguments to find a Campany
+     * @example
+     * // Get one Campany
+     * const campany = await prisma.campany.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends CampanyFindUniqueArgs>(args: SelectSubset<T, CampanyFindUniqueArgs<ExtArgs>>): Prisma__CampanyClient<$Result.GetResult<Prisma.$CampanyPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Campany that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {CampanyFindUniqueOrThrowArgs} args - Arguments to find a Campany
+     * @example
+     * // Get one Campany
+     * const campany = await prisma.campany.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends CampanyFindUniqueOrThrowArgs>(args: SelectSubset<T, CampanyFindUniqueOrThrowArgs<ExtArgs>>): Prisma__CampanyClient<$Result.GetResult<Prisma.$CampanyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Campany that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CampanyFindFirstArgs} args - Arguments to find a Campany
+     * @example
+     * // Get one Campany
+     * const campany = await prisma.campany.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends CampanyFindFirstArgs>(args?: SelectSubset<T, CampanyFindFirstArgs<ExtArgs>>): Prisma__CampanyClient<$Result.GetResult<Prisma.$CampanyPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Campany that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CampanyFindFirstOrThrowArgs} args - Arguments to find a Campany
+     * @example
+     * // Get one Campany
+     * const campany = await prisma.campany.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends CampanyFindFirstOrThrowArgs>(args?: SelectSubset<T, CampanyFindFirstOrThrowArgs<ExtArgs>>): Prisma__CampanyClient<$Result.GetResult<Prisma.$CampanyPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Campanies that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CampanyFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Campanies
+     * const campanies = await prisma.campany.findMany()
+     * 
+     * // Get first 10 Campanies
+     * const campanies = await prisma.campany.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const campanyWithIdOnly = await prisma.campany.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends CampanyFindManyArgs>(args?: SelectSubset<T, CampanyFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CampanyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Campany.
+     * @param {CampanyCreateArgs} args - Arguments to create a Campany.
+     * @example
+     * // Create one Campany
+     * const Campany = await prisma.campany.create({
+     *   data: {
+     *     // ... data to create a Campany
+     *   }
+     * })
+     * 
+     */
+    create<T extends CampanyCreateArgs>(args: SelectSubset<T, CampanyCreateArgs<ExtArgs>>): Prisma__CampanyClient<$Result.GetResult<Prisma.$CampanyPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Campanies.
+     * @param {CampanyCreateManyArgs} args - Arguments to create many Campanies.
+     * @example
+     * // Create many Campanies
+     * const campany = await prisma.campany.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends CampanyCreateManyArgs>(args?: SelectSubset<T, CampanyCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Campanies and returns the data saved in the database.
+     * @param {CampanyCreateManyAndReturnArgs} args - Arguments to create many Campanies.
+     * @example
+     * // Create many Campanies
+     * const campany = await prisma.campany.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Campanies and only return the `id`
+     * const campanyWithIdOnly = await prisma.campany.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends CampanyCreateManyAndReturnArgs>(args?: SelectSubset<T, CampanyCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CampanyPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Campany.
+     * @param {CampanyDeleteArgs} args - Arguments to delete one Campany.
+     * @example
+     * // Delete one Campany
+     * const Campany = await prisma.campany.delete({
+     *   where: {
+     *     // ... filter to delete one Campany
+     *   }
+     * })
+     * 
+     */
+    delete<T extends CampanyDeleteArgs>(args: SelectSubset<T, CampanyDeleteArgs<ExtArgs>>): Prisma__CampanyClient<$Result.GetResult<Prisma.$CampanyPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Campany.
+     * @param {CampanyUpdateArgs} args - Arguments to update one Campany.
+     * @example
+     * // Update one Campany
+     * const campany = await prisma.campany.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends CampanyUpdateArgs>(args: SelectSubset<T, CampanyUpdateArgs<ExtArgs>>): Prisma__CampanyClient<$Result.GetResult<Prisma.$CampanyPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Campanies.
+     * @param {CampanyDeleteManyArgs} args - Arguments to filter Campanies to delete.
+     * @example
+     * // Delete a few Campanies
+     * const { count } = await prisma.campany.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends CampanyDeleteManyArgs>(args?: SelectSubset<T, CampanyDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Campanies.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CampanyUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Campanies
+     * const campany = await prisma.campany.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends CampanyUpdateManyArgs>(args: SelectSubset<T, CampanyUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Campanies and returns the data updated in the database.
+     * @param {CampanyUpdateManyAndReturnArgs} args - Arguments to update many Campanies.
+     * @example
+     * // Update many Campanies
+     * const campany = await prisma.campany.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Campanies and only return the `id`
+     * const campanyWithIdOnly = await prisma.campany.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends CampanyUpdateManyAndReturnArgs>(args: SelectSubset<T, CampanyUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CampanyPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Campany.
+     * @param {CampanyUpsertArgs} args - Arguments to update or create a Campany.
+     * @example
+     * // Update or create a Campany
+     * const campany = await prisma.campany.upsert({
+     *   create: {
+     *     // ... data to create a Campany
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Campany we want to update
+     *   }
+     * })
+     */
+    upsert<T extends CampanyUpsertArgs>(args: SelectSubset<T, CampanyUpsertArgs<ExtArgs>>): Prisma__CampanyClient<$Result.GetResult<Prisma.$CampanyPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Campanies.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CampanyCountArgs} args - Arguments to filter Campanies to count.
+     * @example
+     * // Count the number of Campanies
+     * const count = await prisma.campany.count({
+     *   where: {
+     *     // ... the filter for the Campanies we want to count
+     *   }
+     * })
+    **/
+    count<T extends CampanyCountArgs>(
+      args?: Subset<T, CampanyCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], CampanyCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Campany.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CampanyAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends CampanyAggregateArgs>(args: Subset<T, CampanyAggregateArgs>): Prisma.PrismaPromise<GetCampanyAggregateType<T>>
+
+    /**
+     * Group by Campany.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CampanyGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends CampanyGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: CampanyGroupByArgs['orderBy'] }
+        : { orderBy?: CampanyGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, CampanyGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCampanyGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Campany model
+   */
+  readonly fields: CampanyFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Campany.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__CampanyClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Campany model
+   */
+  interface CampanyFieldRefs {
+    readonly id: FieldRef<"Campany", 'String'>
+    readonly name: FieldRef<"Campany", 'String'>
+    readonly description: FieldRef<"Campany", 'String'>
+    readonly isPublished: FieldRef<"Campany", 'Boolean'>
+    readonly image: FieldRef<"Campany", 'String'>
+    readonly createdAt: FieldRef<"Campany", 'DateTime'>
+    readonly updatedAt: FieldRef<"Campany", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Campany findUnique
+   */
+  export type CampanyFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campany
+     */
+    select?: CampanySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campany
+     */
+    omit?: CampanyOmit<ExtArgs> | null
+    /**
+     * Filter, which Campany to fetch.
+     */
+    where: CampanyWhereUniqueInput
+  }
+
+  /**
+   * Campany findUniqueOrThrow
+   */
+  export type CampanyFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campany
+     */
+    select?: CampanySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campany
+     */
+    omit?: CampanyOmit<ExtArgs> | null
+    /**
+     * Filter, which Campany to fetch.
+     */
+    where: CampanyWhereUniqueInput
+  }
+
+  /**
+   * Campany findFirst
+   */
+  export type CampanyFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campany
+     */
+    select?: CampanySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campany
+     */
+    omit?: CampanyOmit<ExtArgs> | null
+    /**
+     * Filter, which Campany to fetch.
+     */
+    where?: CampanyWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Campanies to fetch.
+     */
+    orderBy?: CampanyOrderByWithRelationInput | CampanyOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Campanies.
+     */
+    cursor?: CampanyWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Campanies from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Campanies.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Campanies.
+     */
+    distinct?: CampanyScalarFieldEnum | CampanyScalarFieldEnum[]
+  }
+
+  /**
+   * Campany findFirstOrThrow
+   */
+  export type CampanyFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campany
+     */
+    select?: CampanySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campany
+     */
+    omit?: CampanyOmit<ExtArgs> | null
+    /**
+     * Filter, which Campany to fetch.
+     */
+    where?: CampanyWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Campanies to fetch.
+     */
+    orderBy?: CampanyOrderByWithRelationInput | CampanyOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Campanies.
+     */
+    cursor?: CampanyWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Campanies from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Campanies.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Campanies.
+     */
+    distinct?: CampanyScalarFieldEnum | CampanyScalarFieldEnum[]
+  }
+
+  /**
+   * Campany findMany
+   */
+  export type CampanyFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campany
+     */
+    select?: CampanySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campany
+     */
+    omit?: CampanyOmit<ExtArgs> | null
+    /**
+     * Filter, which Campanies to fetch.
+     */
+    where?: CampanyWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Campanies to fetch.
+     */
+    orderBy?: CampanyOrderByWithRelationInput | CampanyOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Campanies.
+     */
+    cursor?: CampanyWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Campanies from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Campanies.
+     */
+    skip?: number
+    distinct?: CampanyScalarFieldEnum | CampanyScalarFieldEnum[]
+  }
+
+  /**
+   * Campany create
+   */
+  export type CampanyCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campany
+     */
+    select?: CampanySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campany
+     */
+    omit?: CampanyOmit<ExtArgs> | null
+    /**
+     * The data needed to create a Campany.
+     */
+    data: XOR<CampanyCreateInput, CampanyUncheckedCreateInput>
+  }
+
+  /**
+   * Campany createMany
+   */
+  export type CampanyCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Campanies.
+     */
+    data: CampanyCreateManyInput | CampanyCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Campany createManyAndReturn
+   */
+  export type CampanyCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campany
+     */
+    select?: CampanySelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campany
+     */
+    omit?: CampanyOmit<ExtArgs> | null
+    /**
+     * The data used to create many Campanies.
+     */
+    data: CampanyCreateManyInput | CampanyCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Campany update
+   */
+  export type CampanyUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campany
+     */
+    select?: CampanySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campany
+     */
+    omit?: CampanyOmit<ExtArgs> | null
+    /**
+     * The data needed to update a Campany.
+     */
+    data: XOR<CampanyUpdateInput, CampanyUncheckedUpdateInput>
+    /**
+     * Choose, which Campany to update.
+     */
+    where: CampanyWhereUniqueInput
+  }
+
+  /**
+   * Campany updateMany
+   */
+  export type CampanyUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Campanies.
+     */
+    data: XOR<CampanyUpdateManyMutationInput, CampanyUncheckedUpdateManyInput>
+    /**
+     * Filter which Campanies to update
+     */
+    where?: CampanyWhereInput
+    /**
+     * Limit how many Campanies to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Campany updateManyAndReturn
+   */
+  export type CampanyUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campany
+     */
+    select?: CampanySelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campany
+     */
+    omit?: CampanyOmit<ExtArgs> | null
+    /**
+     * The data used to update Campanies.
+     */
+    data: XOR<CampanyUpdateManyMutationInput, CampanyUncheckedUpdateManyInput>
+    /**
+     * Filter which Campanies to update
+     */
+    where?: CampanyWhereInput
+    /**
+     * Limit how many Campanies to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Campany upsert
+   */
+  export type CampanyUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campany
+     */
+    select?: CampanySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campany
+     */
+    omit?: CampanyOmit<ExtArgs> | null
+    /**
+     * The filter to search for the Campany to update in case it exists.
+     */
+    where: CampanyWhereUniqueInput
+    /**
+     * In case the Campany found by the `where` argument doesn't exist, create a new Campany with this data.
+     */
+    create: XOR<CampanyCreateInput, CampanyUncheckedCreateInput>
+    /**
+     * In case the Campany was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<CampanyUpdateInput, CampanyUncheckedUpdateInput>
+  }
+
+  /**
+   * Campany delete
+   */
+  export type CampanyDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campany
+     */
+    select?: CampanySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campany
+     */
+    omit?: CampanyOmit<ExtArgs> | null
+    /**
+     * Filter which Campany to delete.
+     */
+    where: CampanyWhereUniqueInput
+  }
+
+  /**
+   * Campany deleteMany
+   */
+  export type CampanyDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Campanies to delete
+     */
+    where?: CampanyWhereInput
+    /**
+     * Limit how many Campanies to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Campany without action
+   */
+  export type CampanyDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Campany
+     */
+    select?: CampanySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Campany
+     */
+    omit?: CampanyOmit<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -13304,6 +14416,19 @@ export namespace Prisma {
   };
 
   export type SeoPageScalarFieldEnum = (typeof SeoPageScalarFieldEnum)[keyof typeof SeoPageScalarFieldEnum]
+
+
+  export const CampanyScalarFieldEnum: {
+    id: 'id',
+    name: 'name',
+    description: 'description',
+    isPublished: 'isPublished',
+    image: 'image',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type CampanyScalarFieldEnum = (typeof CampanyScalarFieldEnum)[keyof typeof CampanyScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -14283,6 +15408,68 @@ export namespace Prisma {
     keywords?: StringNullableWithAggregatesFilter<"SeoPage"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"SeoPage"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"SeoPage"> | Date | string
+  }
+
+  export type CampanyWhereInput = {
+    AND?: CampanyWhereInput | CampanyWhereInput[]
+    OR?: CampanyWhereInput[]
+    NOT?: CampanyWhereInput | CampanyWhereInput[]
+    id?: StringFilter<"Campany"> | string
+    name?: StringFilter<"Campany"> | string
+    description?: StringFilter<"Campany"> | string
+    isPublished?: BoolFilter<"Campany"> | boolean
+    image?: StringFilter<"Campany"> | string
+    createdAt?: DateTimeFilter<"Campany"> | Date | string
+    updatedAt?: DateTimeFilter<"Campany"> | Date | string
+  }
+
+  export type CampanyOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    isPublished?: SortOrder
+    image?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type CampanyWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: CampanyWhereInput | CampanyWhereInput[]
+    OR?: CampanyWhereInput[]
+    NOT?: CampanyWhereInput | CampanyWhereInput[]
+    name?: StringFilter<"Campany"> | string
+    description?: StringFilter<"Campany"> | string
+    isPublished?: BoolFilter<"Campany"> | boolean
+    image?: StringFilter<"Campany"> | string
+    createdAt?: DateTimeFilter<"Campany"> | Date | string
+    updatedAt?: DateTimeFilter<"Campany"> | Date | string
+  }, "id">
+
+  export type CampanyOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    isPublished?: SortOrder
+    image?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: CampanyCountOrderByAggregateInput
+    _max?: CampanyMaxOrderByAggregateInput
+    _min?: CampanyMinOrderByAggregateInput
+  }
+
+  export type CampanyScalarWhereWithAggregatesInput = {
+    AND?: CampanyScalarWhereWithAggregatesInput | CampanyScalarWhereWithAggregatesInput[]
+    OR?: CampanyScalarWhereWithAggregatesInput[]
+    NOT?: CampanyScalarWhereWithAggregatesInput | CampanyScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Campany"> | string
+    name?: StringWithAggregatesFilter<"Campany"> | string
+    description?: StringWithAggregatesFilter<"Campany"> | string
+    isPublished?: BoolWithAggregatesFilter<"Campany"> | boolean
+    image?: StringWithAggregatesFilter<"Campany"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Campany"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Campany"> | Date | string
   }
 
   export type ProfileCreateInput = {
@@ -15284,6 +16471,76 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type CampanyCreateInput = {
+    id?: string
+    name: string
+    description: string
+    isPublished: boolean
+    image: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type CampanyUncheckedCreateInput = {
+    id?: string
+    name: string
+    description: string
+    isPublished: boolean
+    image: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type CampanyUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    isPublished?: BoolFieldUpdateOperationsInput | boolean
+    image?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CampanyUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    isPublished?: BoolFieldUpdateOperationsInput | boolean
+    image?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CampanyCreateManyInput = {
+    id?: string
+    name: string
+    description: string
+    isPublished: boolean
+    image: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type CampanyUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    isPublished?: BoolFieldUpdateOperationsInput | boolean
+    image?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CampanyUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    isPublished?: BoolFieldUpdateOperationsInput | boolean
+    image?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type StringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -15977,6 +17234,36 @@ export namespace Prisma {
     title?: SortOrder
     description?: SortOrder
     keywords?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type CampanyCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    isPublished?: SortOrder
+    image?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type CampanyMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    isPublished?: SortOrder
+    image?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type CampanyMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    isPublished?: SortOrder
+    image?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }

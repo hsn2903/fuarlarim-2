@@ -85,7 +85,7 @@ export const updateBlogImage = async (
         image: fullPath,
       },
     });
-    revalidatePath(`/admin/blogs/${blogpostId}/edit`);
+    revalidatePath(`/dashboard/blogs/${blogpostId}/edit`);
     return { message: "Görsel güncellendi." };
   } catch (error) {
     return renderError(error);

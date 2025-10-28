@@ -29,22 +29,39 @@ export const FairCard = ({ fair }: { fair: Fair }) => {
       key={fair.id}
       className="overflow-hidden bg-white dark:bg-gray-800 border-0 group py-0"
     >
+      {/* <Image
+        src={fair.logoImage || "/images/hero.jpg"}
+        alt={fair.name}
+        width={400}
+        height={300}
+        className="object-contain transition-transform duration-300 group-hover:scale-105"
+      />
+      <div className="absolute top-2 right-2 bg-gray-800/90 text-white px-3 py-1 text-xs rounded-md">
+        {fair.category}
+      </div> */}
       <div className="relative aspect-video overflow-hidden">
         <Image
           src={fair.logoImage || "/images/hero.jpg"}
           alt={fair.name}
-          fill
+          width={400} // Specific width
+          height={300} // Specific height (for 4:3 aspect ratio)
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          className="object-contain transition-transform duration-300 group-hover:scale-105"
         />
         <div className="absolute top-2 right-2 bg-gray-800/90 text-white px-3 py-1 text-xs rounded-md">
           {fair.category}
         </div>
       </div>
       <CardContent className="px-4">
-        <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100">
+        <Link
+          href={`/fuarlar/${fair.slug}`}
+          className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100 block -mt-2"
+        >
           {fair.name}
-        </h3>
+        </Link>
+        {/* <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-100">
+          {fair.name}
+        </h3> */}
         <div className="text-sm text-gray-600 dark:text-gray-300 mb-2">
           <div className="flex gap-1 items-center mb-2">
             <Calendar className="mr-2 h-4 w-4" />

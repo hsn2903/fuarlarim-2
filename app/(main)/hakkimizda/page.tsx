@@ -53,8 +53,9 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                Fuarlarım, Türkiye’nin dört bir yanındaki sektör fuarlarını tek
-                çatı altında toplayan akıllı bir arama platformudur.
+                <span className="font-bold">Fuarlarım</span> , Türkiye’nin dört
+                bir yanındaki sektör fuarlarını tek çatı altında toplayan akıllı
+                bir arama platformudur.
               </p>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 İş dünyasının nabzını tutan firmalar, yeni iş bağlantıları
@@ -68,10 +69,13 @@ export default function About() {
                 uygun çözümleri bulabilirler.
               </p>
               <p className="text-gray-600 dark:text-gray-300">
-                Fuarlarım, yalnızca bir listeleme sitesi değil — iş dünyasının
-                buluşma noktasıdır. Görünmeyen tarafta sürekli güncellenen
-                sistemimizle, ziyaretçilere en taze veriyi ulaştırırız. Basit,
-                şeffaf ve etkili. Hepsi bu.
+                Fuarlarım, yalnızca bir listeleme sitesi değil —{" "}
+                <span className="font-bold">
+                  iş dünyasının buluşma noktasıdır.
+                </span>{" "}
+                Görünmeyen tarafta sürekli güncellenen sistemimizle,
+                ziyaretçilere en taze veriyi ulaştırırız. Basit, şeffaf ve
+                etkili. Hepsi bu.
               </p>
             </div>
             <div className="relative aspect-video">
