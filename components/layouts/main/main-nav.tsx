@@ -42,7 +42,7 @@ const MainNav = () => {
     <nav className="bg-white dark:bg-gray-800 shadow-md py-3">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
+          <div className="flex items-center w-full">
             <Link
               href="/"
               className="text-2xl font-bold text-gray-800 dark:text-white"
@@ -56,7 +56,7 @@ const MainNav = () => {
               />
             </Link>
             <div className="hidden md:block ml-10">
-              <div className="flex items-baseline space-x-4">
+              <div className="flex items-baseline justify-between space-x-4 ml-20">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
@@ -78,9 +78,9 @@ const MainNav = () => {
               {/* <NavSearch /> */}
 
               {/* <UserDropdown /> */}
-              <ModeToggle />
+              {/* <ModeToggle /> */}
 
-              <UserButton />
+              {/* <UserButton /> */}
             </div>
           </div>
           <div className="md:hidden">
@@ -114,10 +114,10 @@ const MainNav = () => {
           <div className="px-2 pt-2 pb-3">
             {/* <NavSearch /> */}
 
-            <Button variant="outline" className="w-full my-2">
+            {/* <Button variant="outline" className="w-full my-2">
               Giriş Yap
             </Button>
-            <Button className="w-full">Kayıt Ol</Button>
+            <Button className="w-full">Kayıt Ol</Button> */}
           </div>
         </div>
       )}

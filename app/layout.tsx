@@ -4,7 +4,6 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { trTR } from "@clerk/localizations";
 import { Toaster } from "@/components/ui/sonner";
 import { Inter } from "next/font/google";
-import { ThemeProvider } from "next-themes";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -29,15 +28,8 @@ export default function RootLayout({
           className={`${inter.className} antialiased`}
           suppressHydrationWarning
         >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-            <Toaster />
-          </ThemeProvider>
+          {children}
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>

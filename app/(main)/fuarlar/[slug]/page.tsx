@@ -83,13 +83,16 @@ const FuarDetayPage = async ({
 
   return (
     <main className="min-h-screen">
-      <div className="relative w-full h-80">
-        <Image
-          src={fair?.coverImage || "/images"}
-          alt={fair?.name || ""}
-          layout="fill"
-          // objectFit="cover"
-        />
+      <div className="bg-gray-800 w-full h-40 flex justify-center items-center relative">
+        <div className="">
+          <Image
+            src={fair?.coverImage || "/images"}
+            alt={fair?.name || ""}
+            // layout="fill"
+            width={120}
+            height={120}
+          />
+        </div>
 
         <ImageGalleryButton />
       </div>
@@ -134,11 +137,11 @@ const FuarDetayPage = async ({
                   <p className="font-semibold w-32">Fuar Websitesi: </p>
                   <a
                     href={`http://${fair?.website}`}
-                    className="text-blue-600 hover:text-blue-700 hover:underline transition-colors font-medium"
+                    className="text-gray-600 hover:text-gray-700 hover:underline transition-colors font-medium"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Fuar Linki
+                    {fair?.website?.slice(0, 20)}...
                   </a>
                 </div>
               </div>

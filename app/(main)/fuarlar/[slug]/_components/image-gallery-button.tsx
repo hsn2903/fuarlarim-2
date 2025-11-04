@@ -28,7 +28,7 @@ const ImageGalleryButton = () => {
   return (
     <>
       <Button
-        className="absolute bottom-10 right-10 cursor-pointer"
+        className="absolute bottom-4 right-10 cursor-pointer"
         size="lg"
         onClick={() => setIsOpen(true)}
       >
